@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f4f0; /* Soft coffee shop background */
+    overflow: hidden; /* Prevent scroll */
+}
+
+/* Prevent zoom out beyond the fixed size */
+body {
+    width: 100vw; 
+    height: 100vh; 
+    overflow: hidden;
+}
+
+/* Layout for Main Container */
+.main-container {
+    display: flex;
+    height: calc(100vh - 100px); /* Adjust height based on header size */
+    width: 1200px; /* Fixed width to prevent zooming out */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Left Side: Menu Container */
+.menu-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    padding: 10px;
+    width: 40%;
+    background-color: #f4ede2;
+    border-right: 5px solid #6d4c41;
+    overflow-y: auto; /* Allow scrolling if menu items exceed container height */
+}
+
+/* Menu Button Styling */
+.menu-btn {
+    background-color: #d7bba8;
+    color: #3e2723;
+    border: 4px solid #3e2723;
+    font-size: 1.5rem;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-btn:hover {
+    background-color: #b8997f;
+    transform: scale(1.05);
+}
+
+.menu-btn:active {
+    background-color: #8d6e63;
+    transform: scale(0.98);
+}
+
+/* Right Side: Cart Container */
+.cart-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto; /* Allow scrolling if cart items exceed container height */
+}
+
+.cart-container h2 {
+    color: #6d4c41;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#cart-items li {
+    background-color: #f4ede2;
+    padding: 10px;
+    border-bottom: 2px solid #6d4c41;
+    font-size: 1.2rem;
+    color: #3e2723;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    font-size: 1.8rem;
+    color: #6d4c41;
+    border-top: 4px solid #6d4c41;
+    padding-top: 10px;
+}
+
+.total strong {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .menu-btn {
+        font-size: 1.2rem;
+    }
+
+    .cart-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Add styling for Remove button */
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+.print-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.print-btn:hover {
+    background-color: #2980b9;
+}
+
+.print-btn:active {
+    background-color: #1abc9c;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #6d4c41; /* Coffee brown */
+    color: white;
+}
+
+.header .logo {
+    width: 80px; /* Adjust size of logo */
+    height: auto;
+    margin-right: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+}
+
+/* Styling for item logos in buttons */
+.item-logo {
+    width: 100px; /* Adjust size of the logo */
+    height: 5em;
+    margin-right: 50px;
+    vertical-align: middle;
+}
+
+/* Cart styling (including item logo) */
+#cart-items li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+/* Style for the "Show Saved Orders" button */
+.btn-show-orders {
+    background-color: #6d4c41;  /* Coffee Brown */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-show-orders:hover {
+    background-color: #8b6f59;  /* Lighter brown on hover */
+}
+
+#saved-orders {
+    margin-top: 20px;
+    display: none;
+}
+
+#saved-orders ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#saved-orders ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#saved-orders h2 {
+    color: #6d4c41;
+    text-align: center;
+}
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}

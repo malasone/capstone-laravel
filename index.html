@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbox Coffee POS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section with Coffee Shop Name and Logo -->
+    <header class="header">
+        <img src="L.jpg" alt="Starbox Coffee Logo" class="logo">
+        <h1>Starbox Coffee</h1>
+    </header>
+    <div class="main-container">
+        <!-- Left side: Menu Buttons -->
+        <div class="menu-container">
+            <button class="menu-btn" data-item="Coffee" data-price="3.50" data-logo="coffee.png">
+                <img src="coffee.png" alt="Coffee" class="item-logo"> Coffee
+            </button>
+            <button class="menu-btn" data-item="Cappuccino" data-price="4.00" data-logo="cappucinoyeah.png">
+                <img src="/img/cappucinoyeah.png" alt="Cappuccino" class="item-logo"> Cappuccino
+            </button>
+            <button class="menu-btn" data-item="Latte" data-price="4.50" data-logo="latte.png">
+                <img src="latte.png" alt="Latte" class="item-logo"> Latte
+            </button>
+            <button class="menu-btn" data-item="Americano" data-price="3.00" data-logo="americano.png">
+                <img src="americano.png" alt="Americano" class="item-logo"> Americano
+            </button>
+            <button class="menu-btn" data-item="Mocha" data-price="5.00" data-logo="mocha.png">
+                <img src="mocha.png" alt="Mocha" class="item-logo"> Mocha
+            </button>
+            <button class="menu-btn" data-item="Macchiato" data-price="4.25" data-logo="macchiato.png">
+                <img src="macchiato.png" alt="Macchiato" class="item-logo"> Macchiato
+            </button>
+        </div>
+
+        <!-- Right side: Cart Summary -->
+        <div class="cart-container">
+            <h2>Items Bought</h2>
+            <ul id="cart-items">
+                <!-- Items will be dynamically added here -->
+            </ul>
+            <div class="total">
+                <strong>Total: ₱<span id="total-price">0.00</span></strong>
+            </div>
+            <!-- Print Receipt Button -->
+            <button id="print-receipt" class="print-btn">Print and Save Receipt</button>
+            
+            <button id="show-orders" class="btn-show-orders">Show Saved Orders</button>
+            <div id="saved-orders" style="display: none;">
+                <h2>Saved Orders</h2>
+                <ul id="orders-list"></ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

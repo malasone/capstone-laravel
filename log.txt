@@ -1,0 +1,24 @@
+Array
+(
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Cappuccino
+                    [price] => 4
+                    [quantity] => 3
+                    [logo] => cappucinoyeah.png
+                )
+
+            [1] => Array
+                (
+                    [name] => Latte
+                    [price] => 4.5
+                    [quantity] => 3
+                    [logo] => latte.png
+                )
+
+        )
+
+    [total] => 25.5
+)
